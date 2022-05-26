@@ -10,17 +10,17 @@ def extract_text_from_pdf(pdf_file: str) -> [str]:
         pdf_text = []
 
         for page in reader.pages:
-            text = page.extract_text()
-            pdf_text.append(text)
+            content = page.extract_text()
+            pdf_text.append(content)
 
         return pdf_text
 
 
 def main():
-    extracted_text = extract_text_from_pdf('YOUR_FILE.pdf')
-    for t in extracted_text:
-        # split_message = re.split(r'\s+|[,;?!.-]\s*', t.lower())
-        print(t)
+    extracted_text = extract_text_from_pdf('sample.pdf')
+    for text in extracted_text:
+        # split_message = re.split(r'\s+|[,;?!.-]\s*', text.lower())
+        print(text)
 
 
 if __name__ == '__main__':
